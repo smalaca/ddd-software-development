@@ -8,15 +8,15 @@ import com.smalaca.ci.domain.build.verification.BuildVerificationPolicies;
 import java.util.Map;
 
 public class BuildFactory {
-    private Map<BuildType, BuildVerificationPolicy> strategies = ImmutableMap.of(
+    private Map<BuildType, BuildVerificationPolicy> policies = ImmutableMap.of(
             BuildType.TEST, BuildVerificationPolicies.aTestVerification(),
             BuildType.STATIC_ANALISYS, BuildVerificationPolicies.staticAnalysisVerification(),
             BuildType.PERFORMANCE, BuildVerificationPolicies.performanceVerification()
     );
 
     public Build create(PipelineId pipelineId, BuildType buildType) {
-        BuildVerificationPolicy strategy = strategies.get(buildType);
+        BuildVerificationPolicy policy = policies.get(buildType);
 
-        return new Build(pipelineId, strategy);
+        return new Build(pipelineId, policy);
     }
 }
