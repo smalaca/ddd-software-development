@@ -7,7 +7,7 @@ import com.smalaca.ci.domain.pipeline.events.PipelineTriggered;
 import com.smalaca.ci.domain.pipeline.events.StaticAnalysisSucceed;
 import com.smalaca.ci.domain.pipeline.events.TestsSucceed;
 
-public class PipelineSaga {
+class PipelineSaga {
     private final PipelineStatusTracker pipelineStatusTracker;
     private final DeploymentsService deploymentsService;
     private boolean completed = false;
@@ -17,17 +17,17 @@ public class PipelineSaga {
         this.deploymentsService = deploymentsService;
     }
 
-    public void listen(PipelineTriggered pipelineTriggered) {
+    void listen(PipelineTriggered pipelineTriggered) {
         pipelineStatusTracker.started();
         tryToComplete(pipelineTriggered);
     }
 
-    public void listen(TestsSucceed testsSucceed) {
+    void listen(TestsSucceed testsSucceed) {
         pipelineStatusTracker.testsSucceed();
         tryToComplete(testsSucceed);
     }
 
-    public void listen(StaticAnalysisSucceed staticAnalysisSucceed) {
+    void listen(StaticAnalysisSucceed staticAnalysisSucceed) {
         pipelineStatusTracker.staticAnalysisSucceed();
         tryToComplete(staticAnalysisSucceed);
     }
@@ -39,7 +39,7 @@ public class PipelineSaga {
         }
     }
 
-    public boolean isCompleted() {
+    boolean isCompleted() {
         return completed;
     }
 }
