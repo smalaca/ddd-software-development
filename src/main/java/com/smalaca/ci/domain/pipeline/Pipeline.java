@@ -1,5 +1,6 @@
 package com.smalaca.ci.domain.pipeline;
 
+import com.smalaca.ci.domain.build.Build;
 import com.smalaca.vcs.domain.branch.BranchId;
 import com.smalaca.vcs.domain.commit.CommitHash;
 
@@ -12,7 +13,7 @@ public class Pipeline {
         this.commitHash = commitHash;
     }
 
-    public void triggerNext() {
+    public void triggerBuildsThatDependOn(Build build) {
 
     }
 

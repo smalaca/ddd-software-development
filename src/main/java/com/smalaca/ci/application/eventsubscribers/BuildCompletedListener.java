@@ -25,7 +25,7 @@ public class BuildCompletedListener {
 
         if (buildSpecificationFactory.success().isSatisfied(build)) {
             Pipeline pipeline = pipelineRepository.find(buildCompleted.pipelineId());
-            pipeline.triggerNext();
+            pipeline.triggerBuildsThatDependOn(build);
         }
     }
 }
