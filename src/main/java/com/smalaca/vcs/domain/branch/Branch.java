@@ -13,7 +13,7 @@ public class Branch {
     private BranchId branchId;
 
 
-    Branch(EventsEngine eventsEngine, List<Commit> commits, String name) {
+    private Branch(EventsEngine eventsEngine, List<Commit> commits, String name) {
         this.eventsEngine = eventsEngine;
         this.commits = commits;
         this.name = name;
