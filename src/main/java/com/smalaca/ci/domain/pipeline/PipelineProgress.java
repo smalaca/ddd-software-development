@@ -1,12 +1,12 @@
 package com.smalaca.ci.domain.pipeline;
 
-public class PipelineStatusTracker {
+public class PipelineProgress {
     private final PipelineId pipelineId;
     private boolean started;
     private boolean testsSucceed;
     private boolean staticAnalysisSucceed;
 
-    public PipelineStatusTracker(PipelineId pipelineId) {
+    public PipelineProgress(PipelineId pipelineId) {
         this.pipelineId = pipelineId;
     }
 

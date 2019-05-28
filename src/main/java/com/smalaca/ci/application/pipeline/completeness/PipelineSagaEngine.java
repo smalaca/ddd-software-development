@@ -1,7 +1,7 @@
 package com.smalaca.ci.application.pipeline.completeness;
 
 import com.smalaca.ci.domain.pipeline.PipelineId;
-import com.smalaca.ci.domain.pipeline.PipelineStatusTracker;
+import com.smalaca.ci.domain.pipeline.PipelineProgress;
 import com.smalaca.ci.domain.deployment.DeploymentsService;
 import com.smalaca.ci.domain.pipeline.events.PipelineEvent;
 import com.smalaca.ci.domain.pipeline.events.PipelineTriggered;
@@ -40,7 +40,7 @@ public class PipelineSagaEngine {
 
         if (pipelineSagaRegistry.doesNotExistFor(pipelineId)) {
             PipelineSaga pipelineSaga = new PipelineSaga(
-                    new PipelineStatusTracker(pipelineId), deploymentsService);
+                    new PipelineProgress(pipelineId), deploymentsService);
 
             pipelineSagaRegistry.register(pipelineId, pipelineSaga);
         }
