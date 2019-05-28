@@ -7,7 +7,7 @@ public class BuildCompleted {
     private final BuildId buildId;
     private final PipelineId pipelineId;
 
-    public BuildCompleted(BuildId buildId, PipelineId pipelineId) {
+    BuildCompleted(BuildId buildId, PipelineId pipelineId) {
         this.buildId = buildId;
         this.pipelineId = pipelineId;
     }
