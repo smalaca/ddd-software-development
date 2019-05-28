@@ -1,4 +1,4 @@
-package com.smalaca.ci.application.saga;
+package com.smalaca.ci.application.pipeline.completeness;
 
 import com.smalaca.ci.domain.pipeline.PipelineStatusTracker;
 import com.smalaca.ci.domain.deployment.DeploymentsService;

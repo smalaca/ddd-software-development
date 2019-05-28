@@ -1,4 +1,4 @@
-package com.smalaca.ci.application.eventsubscribers;
+package com.smalaca.ci.application.build;
 
 import com.smalaca.ci.domain.build.Build;
 import com.smalaca.ci.domain.build.BuildFactory;

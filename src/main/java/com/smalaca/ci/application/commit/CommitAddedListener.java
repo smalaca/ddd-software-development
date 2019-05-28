@@ -1,4 +1,4 @@
-package com.smalaca.ci.application.eventsubscribers;
+package com.smalaca.ci.application.commit;
 
 import com.smalaca.ci.domain.pipeline.Pipeline;
 import com.smalaca.ci.domain.pipeline.PipelineFactory;
