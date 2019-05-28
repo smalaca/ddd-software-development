@@ -16,7 +16,7 @@ public class CommitController {
         this.cherryPickCommandFactory = cherryPickCommandFactory;
     }
 
-    public Response cherryPickViaApplicatioService(String hashCode, String targetId) {
+    public Response cherryPickViaApplicationService(String hashCode, String targetId) {
         if (areValid(hashCode, targetId)) {
             commitService.cherryPick(hashCode, targetId);
 
