@@ -21,7 +21,9 @@ public class Commit {
 
     }
 
-    public Commit cherryPick() { return null; }
+    Commit cherryPick() {
+        return new Commit(codeChange, commitHash, commitAuthor, date, message);
+    }
 
     public CommitHash commitHash() {
         return commitHash;
