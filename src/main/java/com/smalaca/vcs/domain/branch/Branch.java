@@ -19,7 +19,7 @@ public class Branch {
     }
 
     public void add(Commit commit) {
-        // some logic
+        commits.add(commit);
 
         eventsEngine.publish(new CommitAdded(branchId, commit.commitHash()));
     }
