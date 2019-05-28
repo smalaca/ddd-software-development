@@ -1,32 +1,28 @@
-package com.smalaca.vcs.application.services;
+package com.smalaca.vcs.application.commit.cherrypick;
 
 import com.smalaca.vcs.domain.branch.Branch;
 import com.smalaca.vcs.domain.branch.BranchId;
 import com.smalaca.vcs.domain.branch.BranchRepository;
-import com.smalaca.vcs.domain.commit.Commit;
-import com.smalaca.vcs.domain.commit.CommitHash;
-import com.smalaca.vcs.domain.commit.CommitHashFactory;
-import com.smalaca.vcs.domain.commit.CommitRepository;
-import com.smalaca.vcs.domain.commit.CherryPickService;
+import com.smalaca.vcs.domain.commit.*;
 
-public class CommitService {
+public class CherryPickCommandHandler {
     private final CommitRepository commitRepository;
     private final BranchRepository branchRepository;
-    private final CommitHashFactory commitHashFactory;
     private final CherryPickService cherryPickService;
+    private final CommitHashFactory commitHashFactory;
 
-    public CommitService(
+    public CherryPickCommandHandler(
             CommitRepository commitRepository, BranchRepository branchRepository,
-            CommitHashFactory commitHashFactory, CherryPickService cherryPickService) {
+            CherryPickService cherryPickService, CommitHashFactory commitHashFactory) {
         this.commitRepository = commitRepository;
         this.branchRepository = branchRepository;
-        this.commitHashFactory = commitHashFactory;
         this.cherryPickService = cherryPickService;
+        this.commitHashFactory = commitHashFactory;
     }
 
-    public void cherryPick(String hashCode, String targetId) {
-        BranchId branchId = BranchId.aBranchId(targetId);
-        CommitHash commitHash = commitHashFactory.from(hashCode);
+    public void handle(CherryPickCommand command) {
+        BranchId branchId = BranchId.aBranchId(command.getBranchId());
+        CommitHash commitHash = commitHashFactory.from(command.getCommitHash());
         Branch branch = branchRepository.find(branchId);
         Commit commit = commitRepository.find(commitHash);
 

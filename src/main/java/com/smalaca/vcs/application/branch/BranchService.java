@@ -1,4 +1,4 @@
-package com.smalaca.vcs.application.services;
+package com.smalaca.vcs.application.branch;
 
 import com.smalaca.vcs.domain.branch.Branch;
 import com.smalaca.vcs.domain.branch.BranchId;

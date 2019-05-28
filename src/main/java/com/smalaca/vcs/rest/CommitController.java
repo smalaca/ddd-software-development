@@ -1,7 +1,7 @@
 package com.smalaca.vcs.rest;
 
-import com.smalaca.vcs.application.commands.CherryPickCommand;
-import com.smalaca.vcs.application.services.CommitService;
+import com.smalaca.vcs.application.commit.CommitService;
+import com.smalaca.vcs.application.commit.cherrypick.CherryPickCommand;
 import com.smalaca.vcs.commandsengine.CommandsEngine;
 
 public class CommitController {

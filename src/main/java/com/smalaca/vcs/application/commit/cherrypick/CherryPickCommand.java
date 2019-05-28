@@ -1,4 +1,4 @@
-package com.smalaca.vcs.application.commands;
+package com.smalaca.vcs.application.commit.cherrypick;
 
 public class CherryPickCommand {
     private final String commitHash;
