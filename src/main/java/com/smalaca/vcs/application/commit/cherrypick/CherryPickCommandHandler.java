@@ -4,8 +4,10 @@ import com.smalaca.vcs.domain.branch.Branch;
 import com.smalaca.vcs.domain.branch.BranchId;
 import com.smalaca.vcs.domain.branch.BranchRepository;
 import com.smalaca.vcs.domain.commit.*;
+import com.smalaca.vcs.rest.command.Command;
+import com.smalaca.vcs.rest.command.CommandHandler;
 
-public class CherryPickCommandHandler {
+public class CherryPickCommandHandler implements CommandHandler<CherryPickCommand> {
     private final CommitRepository commitRepository;
     private final BranchRepository branchRepository;
     private final CherryPickService cherryPickService;
@@ -20,6 +22,7 @@ public class CherryPickCommandHandler {
         this.commitHashFactory = commitHashFactory;
     }
 
+    @Override
     public void handle(CherryPickCommand command) {
         BranchId branchId = BranchId.aBranchId(command.getBranchId());
         CommitHash commitHash = commitHashFactory.from(command.getCommitHash());

@@ -2,14 +2,14 @@ package com.smalaca.vcs.rest;
 
 import com.smalaca.vcs.application.commit.CommitService;
 import com.smalaca.vcs.application.commit.cherrypick.CherryPickCommand;
-import com.smalaca.vcs.commandsengine.CommandsEngine;
+import com.smalaca.vcs.rest.command.CommandBus;
 
 public class CommitController {
-    private final CommandsEngine commandsEngine;
+    private final CommandBus commandBus;
     private final CommitService commitService;
 
-    public CommitController(CommandsEngine commandsEngine, CommitService commitService) {
-        this.commandsEngine = commandsEngine;
+    public CommitController(CommandBus commandBus, CommitService commitService) {
+        this.commandBus = commandBus;
         this.commitService = commitService;
     }
 
@@ -26,7 +26,7 @@ public class CommitController {
     public Response cherryPickViaCommand(String hashCode, String targetId) {
         if (areValid(hashCode, targetId)) {
             CherryPickCommand cherryPickCommand = new CherryPickCommand(hashCode, targetId);
-            commandsEngine.register(cherryPickCommand);
+            commandBus.handle(cherryPickCommand);
 
             return Response.success();
         }

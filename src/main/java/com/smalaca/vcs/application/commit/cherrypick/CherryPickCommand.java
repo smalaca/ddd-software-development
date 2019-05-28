@@ -1,6 +1,8 @@
 package com.smalaca.vcs.application.commit.cherrypick;
 
-public class CherryPickCommand {
+import com.smalaca.vcs.rest.command.Command;
+
+public class CherryPickCommand implements Command {
     private final String commitHash;
     private final String branchId;
 
