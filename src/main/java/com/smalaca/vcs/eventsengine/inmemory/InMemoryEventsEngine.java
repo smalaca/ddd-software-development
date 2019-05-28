@@ -1,6 +1,6 @@
 package com.smalaca.vcs.eventsengine.inmemory;
 
-import com.smalaca.vcs.domain.commit.events.CommitAdded;
+import com.smalaca.vcs.domain.branch.CommitAdded;
 import com.smalaca.vcs.domain.eventsengine.EventsEngine;
 import com.smalaca.vcs.domain.eventsengine.Subscriber;
 

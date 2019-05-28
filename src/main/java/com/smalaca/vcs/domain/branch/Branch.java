@@ -1,7 +1,6 @@
 package com.smalaca.vcs.domain.branch;
 
 import com.smalaca.vcs.domain.commit.Commit;
-import com.smalaca.vcs.domain.commit.events.CommitAdded;
 import com.smalaca.vcs.domain.eventsengine.EventsEngine;
 
 import java.util.List;
