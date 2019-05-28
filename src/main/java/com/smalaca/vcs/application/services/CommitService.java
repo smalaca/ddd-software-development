@@ -7,7 +7,7 @@ import com.smalaca.vcs.domain.commit.Commit;
 import com.smalaca.vcs.domain.commit.CommitHash;
 import com.smalaca.vcs.domain.commit.CommitHashFactory;
 import com.smalaca.vcs.domain.commit.CommitRepository;
-import com.smalaca.vcs.domain.services.CherryPickService;
+import com.smalaca.vcs.domain.commit.CherryPickService;
 
 public class CommitService {
     private final CommitRepository commitRepository;

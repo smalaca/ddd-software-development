@@ -1,4 +1,4 @@
-package com.smalaca.vcs.domain.services;
+package com.smalaca.vcs.domain.commit;
 
 import com.smalaca.vcs.domain.branch.Branch;
 import com.smalaca.vcs.domain.commit.Commit;

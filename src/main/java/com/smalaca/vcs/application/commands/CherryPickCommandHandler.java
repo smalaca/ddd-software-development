@@ -4,7 +4,7 @@ import com.smalaca.vcs.domain.branch.Branch;
 import com.smalaca.vcs.domain.branch.BranchRepository;
 import com.smalaca.vcs.domain.commit.Commit;
 import com.smalaca.vcs.domain.commit.CommitRepository;
-import com.smalaca.vcs.domain.services.CherryPickService;
+import com.smalaca.vcs.domain.commit.CherryPickService;
 
 public class CherryPickCommandHandler {
     private final CommitRepository commitRepository;
